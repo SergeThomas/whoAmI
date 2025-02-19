@@ -9,7 +9,6 @@ env/
 *.venv
 
 # Django specific
-db.sqlite3
 *.sqlite3
 media/
 staticfiles/
