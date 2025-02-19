@@ -18,10 +18,6 @@ staticfiles/
 .env
 *.env
 
-# Migrations (optional: keep initial migrations)
-**/migrations/*.py
-!**/migrations/__init__.py
-
 # IDE files
 .vscode/
 .idea/
