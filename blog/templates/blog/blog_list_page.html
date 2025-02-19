@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Serge Thomas | Blog</title>
+    <meta name="description" content="Blog posts about weed and related topics">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+</head>
+<body>
+    <section class="section">
+        <div class="container" style="max-width: 768px">
+            <div class="level" style="margin: 0">
+                <div class="level-left">
+                    <div class="level-item">
+                        <link rel="icon" type="image/x-icon" href="{% static 'blog/static/favicon.ico' %}">
+                        <nav class="breadcrumb has-bullet-separator" style="margin: 0; display: inline-block" aria-label="breadcrumbs">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li class="is-active"><a href="#" aria-current="page">Blog</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="level-right" style="margin-top: 8px">
+                    <div class="level-item">
+                        <a class="button" href="#">
+                            <span class="icon is-medium">
+                                <i class="fab fa-lg fa-github"></i>
+                            </span>
+                            <span>GitHub</span>
+                        </a>
+                        &nbsp;
+                        <a class="button" href="#">
+                            <span class="icon is-medium">
+                                <i class="fab fa-lg fa-linkedin"></i>
+                            </span>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown-divider" style="margin-bottom: 16px"></div>
+            
+            <div class="content">
+                <div class="content">
+                    <div class="has-text-centered">
+                        <h2 class="title is-size-4">Hi there, I'm Serge Thomas</h2>
+                        <!--And this site is about me, Serge Thomas-->
+                    </div>
+                   
+                    <p>I initially developed this blog to get comfortable deploying an actual 'thing' to the internet, however this blog documents
+                        the things I've learned about software development and the programming languages I am working on.
+                    </p>
+                    <p>I will also be documenting random thoughts I may have (Politically safe of course, I still need a job) and if you're
+                        interested in discussing anything in this blog, feel free to contact me, you can email me (<code class="has-text-dark">smughemuzi@gmail.com</code>)
+                        or connect with me on <a href="https://www.linkedin.com/in/serge-thomas/" target="_blank">LinkedIn</a>.</p>
+                </div>
+                
+                <div class="dropdown-divider" style="margin-top: 16px"></div>
+
+                <div class="blog-posts">
+                    {% for blog in posts_from_db %}
+                    <article class="box">
+                        <a href="{% url 'blog:blog_detail' blog.id %}" class="has-text-dark">
+                            <h3 class="title is-5 mb-2">{{ blog.title }}</h3>
+                            <div class="level is-mobile">
+                                <div class="level-left">
+                                    <div class="level-item">
+                                        <span class="has-text-grey">{{ blog.signature }}</span>
+                                    </div>
+                                </div>
+                                <div class="level-right">
+                                    <div class="level-item">
+                                        <span class="has-text-grey-light">{{ blog.date }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="dropdown-divider" style="margin-top: 16px"></div>
+        </div>
+    </section>
+</body>
+</html>

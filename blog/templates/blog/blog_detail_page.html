@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Serge Thomas | Backend Developer</title>
-    <meta name="description" content="Blog posts on backend development and programming.">
+    <title>{{ single_post_from_db.title }}</title>
+    <meta name="description" content="{{ single_post_from_db.title }} - Blog post">
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
@@ -16,25 +16,26 @@
             <div class="level" style="margin: 0">
                 <div class="level-left">
                     <div class="level-item">
-                        <link rel="icon" type="image/x-icon" href="{% static 'me/static/favicon.ico' %}">
+                        <link rel="icon" type="image/x-icon" href="{% static 'blog/static/favicon.ico' %}">
                         <nav class="breadcrumb has-bullet-separator" style="margin: 0; display: inline-block" aria-label="breadcrumbs">
                             <ul>
-                                <li class="is-active"><a href="#" aria-current="page">SergeThomas</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li><a href="{% url 'blog:blog_list' %}">Blog</a></li>
+                                <li class="is-active"><a href="#" aria-current="page">{{ single_post_from_db.title }}</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
                 <div class="level-right" style="margin-top: 8px">
                     <div class="level-item">
-                        <a class="button" href="https://github.com/SergeThomas" target="_blank">
+                        <a class="button" href="#">
                             <span class="icon is-medium">
                                 <i class="fab fa-lg fa-github"></i>
                             </span>
                             <span>GitHub</span>
                         </a>
                         &nbsp;
-                        <a class="button" href="https://www.linkedin.com/in/serge-thomas/" target="_blank">
+                        <a class="button" href="#">
                             <span class="icon is-medium">
                                 <i class="fab fa-lg fa-linkedin"></i>
                             </span>
@@ -44,19 +45,34 @@
                 </div>
             </div>
             <div class="dropdown-divider" style="margin-bottom: 16px"></div>
+            
             <div class="content">
-                <div class="has-text-centered">
-                    <h2 class="title is-size-4">Hi there, I'm Serge Thomas</h2>
-                    <!--And this site is about me, Serge Thomas-->
-                </div>
-                <p></p>
-                <p>I'm a backend developer specializing in C# and Python, currently integrating Go into my workflow.
-                    I work on various backend projects, focusing on scalable and efficient system design.
-                </p>
-                <p>If you're interested in contacting me, you can email me (<code class="has-text-dark">smughemuzi@gmail.com</code>)
-                    or connect with me on <a href="https://www.linkedin.com/in/serge-thomas/" target="_blank">LinkedIn</a>.</p>
-                <div class="has-text-centered"><a class="button" href="{% url 'blog:blog_list' %}">Visit my blog on backend development and my day to day life!</a></div>
+                <article>
+                    <h1 class="title is-2">{{ single_post_from_db.title }}</h1>
+                    
+                    <div class="level is-mobile mb-5">
+                        <div class="level-left">
+                            <div class="level-item">
+                                <span class="has-text-grey">
+                                    <strong>Subtitle:</strong> {{ single_post_from_db.signature }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="level-right">
+                            <div class="level-item">
+                                <span class="has-text-grey-light">
+                                    <strong>Published:</strong> {{ single_post_from_db.date }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        {{ single_post_from_db.body }}
+                    </div>
+                </article>
             </div>
+            
             <div class="dropdown-divider" style="margin-top: 16px"></div>
         </div>
     </section>
