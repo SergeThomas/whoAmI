@@ -9,56 +9,87 @@
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content-section {
+            flex: 1;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <section class="section">
-        <div class="container" style="max-width: 768px">
-            <div class="level" style="margin: 0">
-                <div class="level-left">
-                    <div class="level-item">
-                        <link rel="icon" type="image/x-icon" href="{% static 'me/static/favicon.ico' %}">
-                        <nav class="breadcrumb has-bullet-separator" style="margin: 0; display: inline-block" aria-label="breadcrumbs">
-                            <ul>
-                                <li class="is-active"><a href="#" aria-current="page">SergeThomas</a></li>
-                                <li><a href="{% url 'blog:blog_list' %}">Blog</a></li>
-                            </ul>
-                        </nav>
+    <div class="wrapper">
+        <section class="section content-section">
+            <div class="container" style="max-width: 768px">
+                <div class="level" style="margin: 0">
+                    <div class="level-left">
+                        <div class="level-item">
+                            <link rel="icon" type="image/x-icon" href="{% static 'me/static/favicon.ico' %}">
+                            <nav class="breadcrumb has-bullet-separator" style="margin: 0; display: inline-block" aria-label="breadcrumbs">
+                                <ul>
+                                    <li class="is-active"><a href="#" aria-current="page">SergeThomas</a></li>
+                                    <li><a href="{% url 'blog:blog_list' %}">Blog</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="level-right" style="margin-top: 8px">
+                        <div class="level-item">
+                            <a class="button" href="https://github.com/SergeThomas" target="_blank">
+                                <span class="icon is-medium">
+                                    <i class="fab fa-lg fa-github"></i>
+                                </span>
+                                <span>GitHub</span>
+                            </a>
+                            &nbsp;
+                            <a class="button" href="https://www.linkedin.com/in/serge-thomas/" target="_blank">
+                                <span class="icon is-medium">
+                                    <i class="fab fa-lg fa-linkedin"></i>
+                                </span>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="level-right" style="margin-top: 8px">
-                    <div class="level-item">
-                        <a class="button" href="https://github.com/SergeThomas" target="_blank">
-                            <span class="icon is-medium">
-                                <i class="fab fa-lg fa-github"></i>
-                            </span>
-                            <span>GitHub</span>
-                        </a>
-                        &nbsp;
-                        <a class="button" href="https://www.linkedin.com/in/serge-thomas/" target="_blank">
-                            <span class="icon is-medium">
-                                <i class="fab fa-lg fa-linkedin"></i>
-                            </span>
-                            <span>LinkedIn</span>
-                        </a>
+                <div class="dropdown-divider" style="margin-bottom: 16px"></div>
+                <div class="content">
+                    <div class="has-text-centered">
+                        <h2 class="title is-size-4">Hi there, I'm Serge Thomas</h2>
+                    </div>
+                    <p>I'm a backend developer specializing in C# and Python, currently integrating Go into my workflow.
+                        Like most developers, I started as a full-stack dev mess, battling CSS and JavaScript until I finally centered a div—which, 
+                        in my opinion, is the true peak of front-end mastery. After that triumphant moment, I shifted my focus to backend development, 
+                        where I could work on building scalable and efficient systems without worrying about pixel-perfect alignment.
+                    </p>
+                    <p>
+                        These days, I specialize in Go (Golang ?), C# and Python, and I’ve been diving into Go stack and eco-system to expand my skill set. Outside of coding, 
+                        I’m into anime, insects, and music—not necessarily in that order.
+                    </p>
+                    <p>If you're interested in contacting me, you can email me (<code class="has-text-dark">smughemuzi@gmail.com</code>)
+                        or connect with me on <a href="https://www.linkedin.com/in/serge-thomas/" target="_blank">LinkedIn</a>.</p>
+                    <div class="has-text-centered">
+                        <a class="button" href="{% url 'blog:blog_list' %}">Visit my blog on development & stuff</a>
                     </div>
                 </div>
+                <div class="dropdown-divider" style="margin-top: 16px"></div>
             </div>
-            <div class="dropdown-divider" style="margin-bottom: 16px"></div>
-            <div class="content">
-                <div class="has-text-centered">
-                    <h2 class="title is-size-4">Hi there, I'm Serge Thomas</h2>
-                    <!--And this site is about me, Serge Thomas-->
-                </div>
-                <p></p>
-                <p>I'm a backend developer specializing in C# and Python, currently integrating Go into my workflow.
-                    I work on various backend projects, focusing on scalable and efficient system design.
-                </p>
-                <p>If you're interested in contacting me, you can email me (<code class="has-text-dark">smughemuzi@gmail.com</code>)
-                    or connect with me on <a href="https://www.linkedin.com/in/serge-thomas/" target="_blank">LinkedIn</a>.</p>
-                <div class="has-text-centered"><a class="button" href="{% url 'blog:blog_list' %}">Visit my blog on backend development and my day to day life!</a></div>
-            </div>
-            <div class="dropdown-divider" style="margin-top: 16px"></div>
-        </div>
-    </section>
+        </section>
+        <footer class="footer">
+            <p>Designed by Serge. With inpsiration from 
+                <a href="http://bettermotherfuckingwebsite.com" target="_blank">bmfw</a> and <a href="https://txti.es" target="_blank">Txti</a></p>
+        </footer>
+    </div>
 </body>
 </html>

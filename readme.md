@@ -15,8 +15,13 @@ This is a simple Django-based personal portfolio and blog site featuring an "Abo
 - **SQLite3** (Default Django database)
 
 ## Live Demo
-This project is deployed through Render.
-
-
-Check out the live version of the site here:
+This project is deployed through Render. Check it out here:
 [Live Site](https://whoami-lg70.onrender.com)
+
+## Optimizations
+- [ ] Migrate from sqlite to postgress due to blog data being refreshed on every server deploy
+- [ ] Add hotdog easter egg
+
+## Authors
+
+- [@SergeThomas](https://github.com/SergeThomas)
