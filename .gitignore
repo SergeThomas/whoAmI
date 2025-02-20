@@ -58,3 +58,6 @@ gunicorn.error.log
 
 # Docker
 docker-compose.override.yml
+
+# Updates
+updates/

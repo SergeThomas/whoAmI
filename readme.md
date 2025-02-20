@@ -21,6 +21,7 @@ This project is deployed through Render. Check it out here:
 ## Optimizations
 - [ ] Migrate from sqlite to postgress due to blog data being refreshed on every server deploy
 - [ ] Add hotdog easter egg
+- [ ] Possible resume update
 
 ## Authors
 
