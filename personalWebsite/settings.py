@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-#za&_3m^70f(ta85-*c_#-!$3%8$inx*idik#^4&eh7ptd+f($
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["whoami-lg70.onrender.com", "127.0.0.1", "https://www.sergethomas.cc"]  # Replace with Render’s domain after deployment
+ALLOWED_HOSTS = ["whoami-lg70.onrender.com", "127.0.0.1", "www.sergethomas.cc"]  # Replace with Render’s domain after deployment
 
 
 # Application definition
